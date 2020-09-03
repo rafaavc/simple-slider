@@ -1,5 +1,5 @@
 
-class Slider {
+class SimpleSlider {
     constructor(elementId, interval = 3000, height = "30vh", firstSlide = 0) {
         this.interval = {
             dur: interval,

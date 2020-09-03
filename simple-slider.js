@@ -62,7 +62,7 @@ class SimpleSlider {
 
     generateNav() {
         const navElements = this.sliderElement.getElementsByClassName('ss-nav');
-        if (navElements.length === 0) this.nav = false;
+        if (!navElements.length) this.nav = false;
 
         for (const child of this.children) {
             let navButton = document.createElement("button");
@@ -78,6 +78,19 @@ class SimpleSlider {
 
             for (const nav of navElements) {
                 nav.appendChild(navButton);
+            }
+        }
+
+        const rightArrowElements = this.sliderElement.getElementsByClassName('ss-rightArrow');
+        if (rightArrowElements.length) {
+            for (const ra of rightArrowElements) {
+                ra.onclick = (function() { this.goToNext(); }).bind(this);
+            }
+        }
+        const leftArrowElements = this.sliderElement.getElementsByClassName('ss-leftArrow');
+        if (leftArrowElements.length) {
+            for (const la of leftArrowElements) {
+                la.onclick = (function() { this.goToPrev(); }).bind(this);
             }
         }
     }
@@ -107,10 +120,14 @@ class SimpleSlider {
     }
 
     goToNext() {
+        this.pause();
         this.updateSlide(this.incrementCurrentSlide(), this.dir.RIGHT);
+        this.start();
     }
     goToPrev() {
-        this.updateSlide(this.decrevementCurrentSlide(), this.dir.RIGHT);
+        this.pause();
+        this.updateSlide(this.decrementCurrentSlide(), this.dir.LEFT);
+        this.start();
     }
 
     goTo(id) {

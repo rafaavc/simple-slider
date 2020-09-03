@@ -24,14 +24,6 @@
     bottom: 0;
 }
 
-.ss-rightArrow {
-
-}
-
-.ss-leftArrow {
-
-}
-
 .ss-disappearToLeft {
     animation: ss-disappearToLeftAnimation .5s forwards;
 }

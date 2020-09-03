@@ -38,7 +38,7 @@
 - Classes **ss-parent** and **ss-child**.
 ##### Optional
 - Class **ss-nav** (There may be more than 1).
-- Classes **ss-rightArrow** and **ss-leftArrow**.
+- Classes **ss-rightArrow** and **ss-leftArrow** (see demo.html).
 - Attribute 'buttonText' of the child divs. Adds text to the respective button (if ss-nav exists), example:
 ```html
 <div class="ss-child" buttonText="Slide 1" style="background-color: yellow;">

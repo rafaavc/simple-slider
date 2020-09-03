@@ -45,6 +45,24 @@
         .ss-nav button.active {
             background-color: grey;
         }
+
+        .sliderArrowContainer {
+            position: absolute;
+            height: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: 3rem;
+        }
+
+        .sliderArrowContainer .ss-leftArrow, .sliderArrowContainer .ss-rightArrow  {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -62,8 +80,12 @@
             <h1>Slide 4</h1>
         </div>
         <div class="ss-nav"></div>
-        <div class="ss-rightArrow"></div>
-        <div class="ss-leftArrow"></div>
+        <div class="sliderArrowContainer" style="right: 0; padding-right: 1rem;">
+            <button class="ss-rightArrow">&rarr;</button>
+        </div>
+        <div class="sliderArrowContainer" style="padding-left: 1rem;">
+            <button class="ss-leftArrow">&larr;</button>
+        </div>
     </div>
     <script type="text/javascript">
         const slider = new SimpleSlider("mySlider");

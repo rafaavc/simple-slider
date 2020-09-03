@@ -10,10 +10,40 @@
         }
 
         .sliderChild {
-            text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+
+        .sliderNav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: .4rem 0;
+        }
+
+        .sliderNav button {
+            background-color: rgb(221, 221, 221);
+            border: none;
+            border-radius: 50%;
+
+            width: 1rem;
+            height: 1rem;
+            
+            margin: 0 .3rem;
+            padding: 0;
+
+            transition: all .2s;
+        }
+
+        .sliderNav button:hover {
+            background-color: rgb(255, 255, 255);
+            cursor: pointer;
+        }
+
+        .sliderNav button.active {
+            background-color: grey;
         }
     </style>
 </head>
@@ -28,9 +58,13 @@
         <div class="sliderChild" style="background-color: green;">
             <h1>Hello3</h1>
         </div>
+        <div class="sliderChild" style="background-color: purple;">
+            <h1>Hello4</h1>
+        </div>
+        <div class="sliderNav"></div>
     </div>
     <script type="text/javascript">
-        const slider = new Slider("mySlider", 2000);
+        const slider = new Slider("mySlider");
         slider.start();
     </script>
 </body>

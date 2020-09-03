@@ -25,7 +25,7 @@ class SimpleSlider {
     indexChildren() {
         this.children = [];
 
-        const childElements = this.sliderElement.getElementsByClassName('sliderChild');
+        const childElements = this.sliderElement.getElementsByClassName('ss-child');
         let counter = 0;
         for(const c of childElements) {
             let childObj = {
@@ -33,22 +33,22 @@ class SimpleSlider {
                 element: c,
                 appear: function(slider, dir) {
                     this.element.style.left = "-100%";
-                    this.element.classList.remove('disappearToLeft');
-                    this.element.classList.remove('disappearToRight');
+                    this.element.classList.remove('ss-disappearToLeft');
+                    this.element.classList.remove('ss-disappearToRight');
                     if (dir === slider.dir.RIGHT) {
-                        this.element.classList.add('appearFromRight');
+                        this.element.classList.add('ss-appearFromRight');
                     } else {
-                        this.element.classList.add('appearFromLeft');
+                        this.element.classList.add('ss-appearFromLeft');
                     }
                 },
                 disappear: function(slider, dir) {
                     this.element.style.left = "0";
-                    this.element.classList.remove('appearFromRight');
-                    this.element.classList.remove('appearFromLeft');
+                    this.element.classList.remove('ss-appearFromRight');
+                    this.element.classList.remove('ss-appearFromLeft');
                     if (dir === slider.dir.RIGHT) {
-                        this.element.classList.add('disappearToLeft');
+                        this.element.classList.add('ss-disappearToLeft');
                     } else {
-                        this.element.classList.add('disappearToRight');
+                        this.element.classList.add('ss-disappearToRight');
                     }
                 }
             }
@@ -61,7 +61,7 @@ class SimpleSlider {
     }
 
     generateNav() {
-        const navElements = this.sliderElement.getElementsByClassName('sliderNav');
+        const navElements = this.sliderElement.getElementsByClassName('ss-nav');
         if (navElements.length === 0) this.nav = false;
 
         for (const child of this.children) {
@@ -72,6 +72,10 @@ class SimpleSlider {
             if (child.element.getAttribute('buttonText')) {
                 navButton.appendChild(document.createTextNode(child.element.getAttribute('buttonText')));
             }
+
+            child.navButton = navButton;
+            if (child.id === this.currentSlide) child.navButton.classList.add('active');
+
             for (const nav of navElements) {
                 nav.appendChild(navButton);
             }
@@ -80,7 +84,9 @@ class SimpleSlider {
 
     updateSlide(changes, direction) {
         this.children[changes.disappear].disappear(this, direction);
+        this.children[changes.disappear].navButton.classList.remove('active');
         this.children[changes.appear].appear(this, direction);
+        this.children[changes.appear].navButton.classList.add('active');
     }
 
     setCurrentSlide(n) {

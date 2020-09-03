@@ -9,13 +9,13 @@
             margin: 0;
         }
 
-        .sliderChild {
+        .ss-child {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .sliderNav {
+        .ss-nav {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,7 +23,7 @@
             padding: .4rem 0;
         }
 
-        .sliderNav button {
+        .ss-nav button {
             background-color: rgb(221, 221, 221);
             border: none;
             border-radius: 50%;
@@ -37,31 +37,33 @@
             transition: all .2s;
         }
 
-        .sliderNav button:hover {
+        .ss-nav button:hover {
             background-color: rgb(255, 255, 255);
             cursor: pointer;
         }
 
-        .sliderNav button.active {
+        .ss-nav button.active {
             background-color: grey;
         }
     </style>
 </head>
 <body>
-    <div id="mySlider" class="sliderParent">
-        <div class="sliderChild" style="background-color: yellow;">
+    <div id="mySlider" class="ss-parent">
+        <div class="ss-child" style="background-color: yellow;">
             <h1>Slide 1</h1>
         </div>
-        <div class="sliderChild" style="background-color: blue;">
+        <div class="ss-child" style="background-color: blue;">
             <h1>Slide 2</h1>
         </div>
-        <div class="sliderChild" style="background-color: green;">
+        <div class="ss-child" style="background-color: green;">
             <h1>Slide 3</h1>
         </div>
-        <div class="sliderChild" style="background-color: purple;">
+        <div class="ss-child" style="background-color: purple;">
             <h1>Slide 4</h1>
         </div>
-        <div class="sliderNav"></div>
+        <div class="ss-nav"></div>
+        <div class="ss-rightArrow"></div>
+        <div class="ss-leftArrow"></div>
     </div>
     <script type="text/javascript">
         const slider = new SimpleSlider("mySlider");

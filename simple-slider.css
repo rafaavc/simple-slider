@@ -1,5 +1,5 @@
 
-.sliderParent {
+.ss-parent {
     box-sizing: border-box;
 
     position: relative;
@@ -7,7 +7,7 @@
     overflow-x: hidden;
 }
 
-.sliderChild {
+.ss-child {
     box-sizing: border-box;
 
     position: absolute;
@@ -16,7 +16,7 @@
     left: -100%;
 }
 
-.sliderNav {
+.ss-nav {
     box-sizing: border-box;
 
     position: absolute;
@@ -24,35 +24,43 @@
     bottom: 0;
 }
 
-.disappearToLeft {
-    animation: disappearToLeftAnimation .5s forwards;
+.ss-rightArrow {
+
 }
 
-.disappearToRight {
-    animation: disappearToRightAnimation .5s forwards;
+.ss-leftArrow {
+
 }
 
-.appearFromRight {
-    animation: appearFromRightAnimation .5s forwards;
+.ss-disappearToLeft {
+    animation: ss-disappearToLeftAnimation .5s forwards;
 }
 
-.appearFromLeft {
-    animation: appearFromLeftAnimation .5s forwards;
+.ss-disappearToRight {
+    animation: ss-disappearToRightAnimation .5s forwards;
 }
 
-@keyframes disappearToLeftAnimation {
+.ss-appearFromRight {
+    animation: ss-appearFromRightAnimation .5s forwards;
+}
+
+.ss-appearFromLeft {
+    animation: ss-appearFromLeftAnimation .5s forwards;
+}
+
+@keyframes ss-disappearToLeftAnimation {
     100% {
         left: -100%;
     }
 }
 
-@keyframes disappearToRightAnimation {
+@keyframes ss-disappearToRightAnimation {
     100% {
         left: 100%;
     }
 }
 
-@keyframes appearFromRightAnimation {
+@keyframes ss-appearFromRightAnimation {
     0% {
         left: 100%;
     }
@@ -62,7 +70,7 @@
     }
 }
 
-@keyframes appearFromLeftAnimation {
+@keyframes ss-appearFromLeftAnimation {
     0% {
         left: -100%;
     }

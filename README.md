@@ -17,17 +17,17 @@
 ### Markup
 
 ```html
-<div id="mySlider" class="sliderParent">
-    <div class="sliderChild" style="background-color: yellow;">
+<div id="mySlider" class="ss-parent">
+     <div class="ss-child" style="background-color: yellow;">
         <h1>Slide 1</h1>
     </div>
-    <div class="sliderChild" style="background-color: blue;">
+    <div class="ss-child" style="background-color: blue;">
         <h1>Slide 2</h1>
     </div>
-    <div class="sliderChild" style="background-color: green;">
+    <div class="ss-child" style="background-color: green;">
         <h1>Slide 3</h1>
     </div>
-    <div class="sliderChild" style="background-color: purple;">
+    <div class="ss-child" style="background-color: purple;">
         <h1>Slide 4</h1>
     </div>
     <div class="sliderNav"></div>
@@ -35,12 +35,13 @@
 ```
 
 ##### Required
-- Classes **sliderParent** and **sliderChild**.
+- Classes **ss-parent** and **ss-child**.
 ##### Optional
-- Class **sliderNav** (There may be more than 1).
-- Attribute 'buttonText' of the child divs. Adds text to the respective button (if sliderNav exists), example:
+- Class **ss-nav** (There may be more than 1).
+- Classes **ss-rightArrow** and **ss-leftArrow**.
+- Attribute 'buttonText' of the child divs. Adds text to the respective button (if ss-nav exists), example:
 ```html
-<div class="sliderChild" buttonText="Slide 1" style="background-color: yellow;">
+<div class="ss-child" buttonText="Slide 1" style="background-color: yellow;">
     <h1>Slide 1</h1>
 </div>
 ```

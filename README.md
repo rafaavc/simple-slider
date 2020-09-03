@@ -76,10 +76,10 @@ SimpleSlider.start()
 ---
 
 ```JavaScript
-SimpleSlider.next()
+SimpleSlider.pause()
 ```
 
-Jumps to next slide.
+Pauses the slideshow
 
 ---
 
@@ -92,9 +92,17 @@ Jumps to the slide with id qual to the one given in the argument (ids start at 0
 ---
 
 ```JavaScript
-SimpleSlider.pause()
+SimpleSlider.goToNext()
 ```
 
-Pauses the slideshow.
+Jumps to next slide.
+
+---
+
+```JavaScript
+SimpleSlider.goToPrev()
+```
+
+Jumps to previous slide.
 
 

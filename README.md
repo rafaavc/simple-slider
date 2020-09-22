@@ -1,5 +1,7 @@
 # Simple Slider
 
+DEMO: <a href="https://github.com/rafaavc/simple-slider/blob/master/demo.html">source</a> / <a href="https://rafaelcristino.com/simple-slider/">running</a>
+
 ## How to use
 
 ### Includes
